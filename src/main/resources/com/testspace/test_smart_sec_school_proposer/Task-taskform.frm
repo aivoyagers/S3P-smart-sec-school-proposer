@@ -1,0 +1,1 @@
+{"id":"524968ce-c0d9-4003-bee7-bb583062f355","name":"Task-taskform.frm","model":{"taskName":"Task","processId":"test-smart-sec-school-proposer.sec-sch-pro","properties":[],"formModelType":"org.kie.workbench.common.forms.jbpm.model.authoring.task.TaskFormModel"},"fields":[],"layoutTemplate":{"version":2,"style":"FLUID","layoutProperties":{},"rows":[]}}

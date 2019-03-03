@@ -1,0 +1,9 @@
+package com.testspace.test_smart_sec_school_proposer;
+
+import java.lang.Number;
+
+rule "LoadSchoolData"
+	dialect "mvel"
+	when
+	then
+end
