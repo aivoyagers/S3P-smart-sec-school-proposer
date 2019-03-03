@@ -8,22 +8,25 @@ public class Student implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "Name")
+	@org.kie.api.definition.type.Label("Name")
 	private java.lang.String name;
-	@org.kie.api.definition.type.Label(value = "Postal Code")
+	@org.kie.api.definition.type.Label("Postal Code")
 	private int postalCode;
-	@org.kie.api.definition.type.Label(value = "Mode of transport")
+	@org.kie.api.definition.type.Label("Mode of transport")
 	private java.lang.String modeOfTransport;
-	@org.kie.api.definition.type.Label(value = "Expected or Prelims Score")
+	@org.kie.api.definition.type.Label("Expected or Prelims Score")
 	private int expectedScore;
-	@org.kie.api.definition.type.Label(value = "Mother Tongue ")
+	@org.kie.api.definition.type.Label("Mother Tongue ")
 	private java.lang.String motherTongue;
-	@org.kie.api.definition.type.Label(value = "Resident Status")
+	@org.kie.api.definition.type.Label("Resident Status")
 	private java.lang.String residentStatus;
-	@org.kie.api.definition.type.Label(value = "Gender")
+	@org.kie.api.definition.type.Label("Gender")
 	private java.lang.String gender;
-	@org.kie.api.definition.type.Label(value = "Preference of co-ed/single")
+	@org.kie.api.definition.type.Label("Preference of co-ed/single")
 	private java.lang.String preferenceCoedOrSingle;
+
+	@org.kie.api.definition.type.Label(value = "Error and Cause")
+	private com.testspace.test_smart_sec_school_proposer.ValidationErrorDO error;
 
 	public Student() {
 	}
@@ -93,10 +96,20 @@ public class Student implements java.io.Serializable {
 		this.preferenceCoedOrSingle = preferenceCoedOrSingle;
 	}
 
+	public com.testspace.test_smart_sec_school_proposer.ValidationErrorDO getError() {
+		return this.error;
+	}
+
+	public void setError(
+			com.testspace.test_smart_sec_school_proposer.ValidationErrorDO error) {
+		this.error = error;
+	}
+
 	public Student(java.lang.String name, int postalCode,
 			java.lang.String modeOfTransport, int expectedScore,
 			java.lang.String motherTongue, java.lang.String residentStatus,
-			java.lang.String gender, java.lang.String preferenceCoedOrSingle) {
+			java.lang.String gender, java.lang.String preferenceCoedOrSingle,
+			com.testspace.test_smart_sec_school_proposer.ValidationErrorDO error) {
 		this.name = name;
 		this.postalCode = postalCode;
 		this.modeOfTransport = modeOfTransport;
@@ -105,6 +118,7 @@ public class Student implements java.io.Serializable {
 		this.residentStatus = residentStatus;
 		this.gender = gender;
 		this.preferenceCoedOrSingle = preferenceCoedOrSingle;
+		this.error = error;
 	}
 
 }
