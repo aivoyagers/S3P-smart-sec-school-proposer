@@ -25,8 +25,14 @@ public class Student implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Preference of co-ed/single")
 	private java.lang.String preferenceCoedOrSingle;
 
-	@org.kie.api.definition.type.Label(value = "Error and Cause")
+	@org.kie.api.definition.type.Label("Error and Cause")
 	private com.testspace.test_smart_sec_school_proposer.ValidationErrorDO error;
+
+	@org.kie.api.definition.type.Label("Dummy Variable")
+	private Boolean firstEntrytoLoad = true;
+
+	@org.kie.api.definition.type.Label("School Collection")
+	private com.testspace.test_smart_sec_school_proposer.SchoolCollection schoolCollection;
 
 	public Student() {
 	}
@@ -105,11 +111,52 @@ public class Student implements java.io.Serializable {
 		this.error = error;
 	}
 
-	public Student(java.lang.String name, int postalCode,
-			java.lang.String modeOfTransport, int expectedScore,
-			java.lang.String motherTongue, java.lang.String residentStatus,
-			java.lang.String gender, java.lang.String preferenceCoedOrSingle,
-			com.testspace.test_smart_sec_school_proposer.ValidationErrorDO error) {
+	public java.lang.Boolean getFirstEntrytoLoad() {
+		return this.firstEntrytoLoad;
+	}
+
+	public void setFirstEntrytoLoad(java.lang.Boolean firstEntrytoLoad) {
+		this.firstEntrytoLoad = firstEntrytoLoad;
+	}
+
+	public com.testspace.test_smart_sec_school_proposer.SchoolCollection getSchoolCollection() {
+		return this.schoolCollection;
+	}
+
+	public void setSchoolCollection(
+			com.testspace.test_smart_sec_school_proposer.SchoolCollection schoolCollection) {
+		this.schoolCollection = schoolCollection;
+	}
+
+	public void populateSchoolCollection() {
+		System.out.println("populateSchools" + schoolCollection);
+		schoolCollection = new SchoolCollection();
+		System.out.println("afer populateSchools" + schoolCollection);
+
+		schoolCollection.populateSchools();
+		System.out.println("afer populateSchools"
+				+ schoolCollection.getSchoolList());
+	}
+
+	// Method added by Raja
+
+	public Boolean isStudentGenderAllowed(java.lang.String schoolType) {
+		return (schoolType.contains(this.getGender()) || schoolType
+				.contains("Co-ed"));
+	}
+
+	public Student(
+			java.lang.String name,
+			int postalCode,
+			java.lang.String modeOfTransport,
+			int expectedScore,
+			java.lang.String motherTongue,
+			java.lang.String residentStatus,
+			java.lang.String gender,
+			java.lang.String preferenceCoedOrSingle,
+			com.testspace.test_smart_sec_school_proposer.ValidationErrorDO error,
+			java.lang.Boolean firstEntrytoLoad,
+			com.testspace.test_smart_sec_school_proposer.SchoolCollection schoolCollection) {
 		this.name = name;
 		this.postalCode = postalCode;
 		this.modeOfTransport = modeOfTransport;
@@ -119,6 +166,8 @@ public class Student implements java.io.Serializable {
 		this.gender = gender;
 		this.preferenceCoedOrSingle = preferenceCoedOrSingle;
 		this.error = error;
+		this.firstEntrytoLoad = firstEntrytoLoad;
+		this.schoolCollection = schoolCollection;
 	}
 
 }

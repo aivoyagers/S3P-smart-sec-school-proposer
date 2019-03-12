@@ -3,15 +3,15 @@ package com.testspace.test_smart_sec_school_proposer;
 import java.lang.Number;
 
 rule "COPGenderDecisionRule"
+	ruleflow-group "copGenderDecisionRuleFlowGroup"
 	dialect "mvel"
-	ruleflow-group "copGenderRuleFlowGroup"
 	when
-		$school : School( schoolSelected != true )
+		$school : School( $schSelectedBoolean : schoolSelected == false )
 		$student : Student( expectedScore >= $school.copOverallMin )
 	then
 		System.out.println("Executed Rule: " + drools.getRule().getName() );
-		System.out.println("School Score  "  + $school.copOverallMin);
 		modify( $school ) {
 				setSchoolSelected( true )
 		}
+		System.out.println("School Name : " + $school.getSchoolName() + "School Score  "  + $school.getCopOverallMin() " Selected : " + $school.getSchoolSelected());
 end

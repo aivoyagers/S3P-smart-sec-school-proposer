@@ -1,0 +1,14 @@
+package com.testspace.test_smart_sec_school_proposer;
+
+import java.lang.Number;
+
+rule "DetermineChoiceSchools"
+	dialect "mvel"
+	ruleflow-group "DetermineChoiceSchoolsRuleFlowGroup"
+	when
+		$school : School( schoolSelected == true )
+		$schChoiceCol : SchoolCollection( )
+	then
+		$schChoiceCol.addSchool( $school );
+		System.out.println("School Choice Collection added : " + $school.getSchoolName() + " Selected : " + $school.getSchoolSelected());
+end

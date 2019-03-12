@@ -4,6 +4,31 @@ import java.lang.Number;
 
 rule "LoadSchoolData"
 	dialect "mvel"
+	ruleflow-group "loadSchoolDataRuleFlowGroup"
 	when
+		$stuRecord : Student( )
 	then
+		$stuRecord.populateSchoolCollection(  );
+		for(School $schoolRec: $stuRecord.getSchoolCollection().getSchoolList()) {
+		System.out.println($schoolRec.getSchoolName());
+		System.out.println($schoolRec.getSchoolSelected());
+		School $schoolObj = new School();
+		$schoolObj.setSchoolName( $schoolRec.getSchoolName() );
+		$schoolObj.setSchoolSelected( false );
+		$schoolObj.setCopOverallMin( $schoolRec.getCopOverallMin() );
+		$schoolObj.setType( $schoolRec.getType() );
+		$schoolObj.setCcaList( $schoolRec.getCcaList() );
+		$schoolObj.setCopExpMax( $schoolRec.getCopExpMax() );
+		$schoolObj.setCopExpMean( $schoolRec.getCopExpMean() );
+		$schoolObj.setCopExpMin( $schoolRec.getCopExpMin() );
+		$schoolObj.setCopNormalMax( $schoolRec.getCopNormalMax() );
+		$schoolObj.setCopNormalMean( $schoolRec.getCopNormalMean() );
+		$schoolObj.setCopNormalMin( $schoolRec.getCopNormalMin() );
+		$schoolObj.setCopNTMax( $schoolRec.getCopNTMax() );
+		$schoolObj.setCopNTMin( $schoolRec.getCopNTMin() );
+		$schoolObj.setMotherTongue( $schoolRec.getMotherTongue() );
+		$schoolObj.setPostalCode( $schoolRec.getPostalCode() );
+		$schoolObj.setSchoolLink( $schoolRec.getSchoolLink() );
+		insert( $schoolObj );
+		}
 end

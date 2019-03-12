@@ -86,7 +86,6 @@ public class School implements java.io.Serializable {
 	private com.testspace.test_smart_sec_school_proposer.SchDerived derivedData;
 
 	public School() {
-	    System.out.println ("Inside School Constructor");
 	}
 
 	public java.lang.String getSchoolName() {
@@ -268,7 +267,6 @@ public class School implements java.io.Serializable {
 
 	public void setCopOverallMin(int copOverallMin) {
 		this.copOverallMin = copOverallMin;
-		System.out.println ("Set COP Min Done"); 
 	}
 
 	public int getCopOverallMax() {
