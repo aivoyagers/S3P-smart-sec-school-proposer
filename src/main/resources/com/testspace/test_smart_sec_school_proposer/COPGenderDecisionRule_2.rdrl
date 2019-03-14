@@ -5,11 +5,14 @@ import java.lang.Number;
 rule "COPGenderDecisionRule_2"
 	ruleflow-group "copGenderDecisionRuleFlowGroup"
 	dialect "mvel"
+	salience 90
 	when
-		$school : School( $schSelectedBoolean : schoolSelected == true )
-		$student : Student( eval( !isStudentGenderAllowed($school.getType()) ))
+		$selSch : SelectedSchool( $sch : school)
+		$student : Student( eval( !isStudentGenderAllowed($sch.getType()) ))
 	then
-		System.out.println("Executed Rule: " + drools.getRule().getName() );
-		$school.setSchoolSelected( false );
-		System.out.println("School Name : " + $school.getSchoolName() + "School Type  "  + $school.getType() + " Selected : " + $school.getSchoolSelected());
+		NotSelectedSchool $notSel = new NotSelectedSchool();
+		$notSel.setSchool( $sch );
+		insert( $notSel );
+		retract( $selSch );
+		System.out.println("Executed Rule: " + drools.getRule().getName() + " Gender Rule When condition met : " + $sch.getSchoolName() + " " + $sch.getType() );
 end

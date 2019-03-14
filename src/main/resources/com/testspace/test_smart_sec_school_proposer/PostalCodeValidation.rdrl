@@ -1,0 +1,16 @@
+package com.testspace.test_smart_sec_school_proposer;
+
+import java.lang.Number;
+
+rule "PostalCodeValidation"
+	dialect "mvel"
+	ruleflow-group "StudentInfoValidationRuleFlowGroup"
+	when
+		stu : Student( postalCode : postalCode <= 10000 )
+	then
+		ValidationErrorDO fact0 = new ValidationErrorDO();
+		fact0.setError( "Postal code should be six characters" );
+		insert( fact0 );
+		System.out.println("Executed Rule: " + drools.getRule().getName() );
+		stu.setError( fact0 );
+end

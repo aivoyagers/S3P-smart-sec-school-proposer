@@ -28,6 +28,9 @@ public class Student implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Error and Cause")
 	private com.testspace.test_smart_sec_school_proposer.ValidationErrorDO error;
 
+	@org.kie.api.definition.type.Label(value = "Preferred CCA")
+	private java.util.List<java.lang.String> cca;
+
 	@org.kie.api.definition.type.Label("Dummy Variable")
 	private Boolean firstEntrytoLoad = true;
 
@@ -145,6 +148,14 @@ public class Student implements java.io.Serializable {
 				.contains("Co-ed"));
 	}
 
+	public java.util.List<java.lang.String> getCca() {
+		return this.cca;
+	}
+
+	public void setCca(java.util.List<java.lang.String> cca) {
+		this.cca = cca;
+	}
+
 	public Student(
 			java.lang.String name,
 			int postalCode,
@@ -154,9 +165,10 @@ public class Student implements java.io.Serializable {
 			java.lang.String residentStatus,
 			java.lang.String gender,
 			java.lang.String preferenceCoedOrSingle,
-			com.testspace.test_smart_sec_school_proposer.ValidationErrorDO error,
 			java.lang.Boolean firstEntrytoLoad,
-			com.testspace.test_smart_sec_school_proposer.SchoolCollection schoolCollection) {
+			com.testspace.test_smart_sec_school_proposer.SchoolCollection schoolCollection,
+			com.testspace.test_smart_sec_school_proposer.ValidationErrorDO error,
+			java.util.List<java.lang.String> cca) {
 		this.name = name;
 		this.postalCode = postalCode;
 		this.modeOfTransport = modeOfTransport;
@@ -165,9 +177,10 @@ public class Student implements java.io.Serializable {
 		this.residentStatus = residentStatus;
 		this.gender = gender;
 		this.preferenceCoedOrSingle = preferenceCoedOrSingle;
-		this.error = error;
 		this.firstEntrytoLoad = firstEntrytoLoad;
 		this.schoolCollection = schoolCollection;
+		this.error = error;
+		this.cca = cca;
 	}
 
 }

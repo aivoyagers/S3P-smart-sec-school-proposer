@@ -5,13 +5,13 @@ import java.lang.Number;
 rule "LoadSchoolData"
 	dialect "mvel"
 	ruleflow-group "loadSchoolDataRuleFlowGroup"
+	salience 100
 	when
 		$stuRecord : Student( )
 	then
 		$stuRecord.populateSchoolCollection(  );
 		for(School $schoolRec: $stuRecord.getSchoolCollection().getSchoolList()) {
-		System.out.println($schoolRec.getSchoolName());
-		System.out.println($schoolRec.getSchoolSelected());
+		System.out.println(" School Loaded : " + $schoolRec.getSchoolName());
 		School $schoolObj = new School();
 		$schoolObj.setSchoolName( $schoolRec.getSchoolName() );
 		$schoolObj.setSchoolSelected( false );

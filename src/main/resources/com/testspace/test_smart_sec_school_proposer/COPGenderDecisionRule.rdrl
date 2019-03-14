@@ -5,13 +5,15 @@ import java.lang.Number;
 rule "COPGenderDecisionRule"
 	ruleflow-group "copGenderDecisionRuleFlowGroup"
 	dialect "mvel"
+	salience 100
 	when
-		$school : School( $schSelectedBoolean : schoolSelected == false )
-		$student : Student( expectedScore >= $school.copOverallMin )
+		$stu : Student( )
+		$selSch : SelectedSchool( $sch : school, school.copOverallMin > $stu.expectedScore )
 	then
-		System.out.println("Executed Rule: " + drools.getRule().getName() );
-		modify( $school ) {
-				setSchoolSelected( true )
-		}
-		System.out.println("School Name : " + $school.getSchoolName() + "School Score  "  + $school.getCopOverallMin() " Selected : " + $school.getSchoolSelected());
+		// System.out.println("Executed Rule: " + drools.getRule().getName() );
+		System.out.println("Executed Rule: " + drools.getRule().getName()  +  " Overall Min score - insert Not Selected Object : " + $sch.getSchoolName())
+		NotSelectedSchool $NotSel = new NotSelectedSchool();
+		$NotSel.setSchool( $sch );
+		insert( $NotSel );
+		retract( $selSch );
 end

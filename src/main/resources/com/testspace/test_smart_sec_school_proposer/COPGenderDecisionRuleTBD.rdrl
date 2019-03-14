@@ -1,0 +1,13 @@
+package com.testspace.test_smart_sec_school_proposer;
+
+import java.lang.Number;
+
+rule "COPGenderDecisionRuleTBD"
+	ruleflow-group "copGenderDecisionRuleFlowGroup"
+	dialect "mvel"
+	salience 101
+	when
+		$selSch : SelectedSchool( $sch : school)
+	then
+		System.out.println("Executed Rule: " + drools.getRule().getName()  + " Selected School : " + $sch.getSchoolName());
+end

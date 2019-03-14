@@ -1,0 +1,16 @@
+package com.testspace.test_smart_sec_school_proposer;
+
+import java.lang.Number;
+
+rule "validation"
+	dialect "mvel"
+	ruleflow-group "StudentInfoValidationRuleFlowGroup"
+	when
+		stu : Student( expectedScore >= 300 || expectedScore < 100 )
+	then
+		ValidationErrorDO fact0 = new ValidationErrorDO();
+		fact0.setError( "Expected T Score range should be  150 t0 300" );
+		insert( fact0 );
+		System.out.println("Executed Rule: " + drools.getRule().getName() );
+		stu.setError( fact0 );
+end

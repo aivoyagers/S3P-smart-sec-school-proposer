@@ -1,0 +1,12 @@
+package com.testspace.test_smart_sec_school_proposer;
+
+import java.lang.Number;
+
+rule "retractValidation"
+	dialect "mvel"
+	ruleflow-group "retractValidationOfStudentRuleFlowGroup"
+	when
+		vo : ValidationErrorDO( )
+	then
+		retract( vo );
+end
