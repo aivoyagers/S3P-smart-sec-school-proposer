@@ -82,8 +82,17 @@ public class School implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Selected based on COP and Gender")
 	private java.lang.Boolean schoolSelected;
 
-	@org.kie.api.definition.type.Label(value = "Derived data for the school")
+	@org.kie.api.definition.type.Label("Derived data for the school")
 	private com.testspace.test_smart_sec_school_proposer.SchDerived derivedData;
+
+	@org.kie.api.definition.type.Label(value = "COP Express CF")
+	private float copExCF;
+
+	@org.kie.api.definition.type.Label(value = "COP Normal CF")
+	private float copNormalCF;
+
+	@org.kie.api.definition.type.Label(value = "COP NT CF")
+	private float copNTCF;
 
 	public School() {
 	}
@@ -91,10 +100,10 @@ public class School implements java.io.Serializable {
 	public java.lang.String getSchoolName() {
 		return this.schoolName;
 	}
-	
+
 	// Manually set method
 	public void printSchoolName() {
-	    System.out.println (this.schoolName);
+		System.out.println(this.schoolName);
 	}
 
 	public void setSchoolName(java.lang.String schoolName) {
@@ -294,17 +303,61 @@ public class School implements java.io.Serializable {
 		this.derivedData = derivedData;
 	}
 
-	public School(java.lang.String schoolName, java.lang.String location,
-			java.lang.String postalCode, java.lang.String type,
-			java.lang.String motherTongue, java.lang.String ccaList,
-			java.lang.String schoolRank, java.lang.String fee,
-			java.lang.String schoolCode, java.lang.String schoolLink,
+	// Method added by Raja
+
+	// public void updateCF(java.lang.)
+
+	public float getCopExCF() {
+		return this.copExCF;
+	}
+
+	public void setCopExCF(float copExCF) {
+		this.copExCF = copExCF;
+	}
+
+	public float getCopNormalCF() {
+		return this.copNormalCF;
+	}
+
+	public void setCopNormalCF(float copNormalCF) {
+		this.copNormalCF = copNormalCF;
+	}
+
+	public float getCopNTCF() {
+		return this.copNTCF;
+	}
+
+	public void setCopNTCF(float copNTCF) {
+		this.copNTCF = copNTCF;
+	}
+
+	public School(
+			java.lang.String schoolName,
+			java.lang.String location,
+			java.lang.String postalCode,
+			java.lang.String type,
+			java.lang.String motherTongue,
+			java.lang.String ccaList,
+			java.lang.String schoolRank,
+			java.lang.String fee,
+			java.lang.String schoolCode,
+			java.lang.String schoolLink,
 			java.lang.String programTypeOffered,
-			java.lang.String subjectsOffered, int copExpMean, int copNTMean,
-			int copNormalMean, int copExpMin, int copNTMin, int copNormalMin,
-			int copExpMax, int copNTMax, int copNormalMax, int copOverallMin,
-			int copOverallMax, java.lang.Boolean schoolSelected,
-			com.testspace.test_smart_sec_school_proposer.SchDerived derivedData) {
+			java.lang.String subjectsOffered,
+			int copExpMean,
+			int copNTMean,
+			int copNormalMean,
+			int copExpMin,
+			int copNTMin,
+			int copNormalMin,
+			int copExpMax,
+			int copNTMax,
+			int copNormalMax,
+			int copOverallMin,
+			int copOverallMax,
+			java.lang.Boolean schoolSelected,
+			com.testspace.test_smart_sec_school_proposer.SchDerived derivedData,
+			float copExCF, float copNormalCF, float copNTCF) {
 		this.schoolName = schoolName;
 		this.location = location;
 		this.postalCode = postalCode;
@@ -330,6 +383,9 @@ public class School implements java.io.Serializable {
 		this.copOverallMax = copOverallMax;
 		this.schoolSelected = schoolSelected;
 		this.derivedData = derivedData;
+		this.copExCF = copExCF;
+		this.copNormalCF = copNormalCF;
+		this.copNTCF = copNTCF;
 	}
 
 }

@@ -5,13 +5,12 @@ import java.lang.Number;
 rule "DetermineChoiceSchools"
 	dialect "mvel"
 	ruleflow-group "DetermineChoiceSchoolsRuleFlowGroup"
-	salience 100
+	salience 99
 	when
-		$selSch : SelectedSchool( $sch : school, $schSel : school.schoolSelected != true )
+		$selSch : SelectedSchool( $sch : school)
 		$schChoiceCol : SchoolCollection( )
 	then
 		$schChoiceCol.addSchool( $sch );
-		$selSch.school.setSchoolSelected(true);
-		retract( $selSch );
 		System.out.println("Executed Rule: " + drools.getRule().getName()  + "School Choice Collection added : " + $sch.getSchoolName() + " Selected : " + $sch.getSchoolSelected());
+		retract( $selSch );
 end

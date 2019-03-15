@@ -5,9 +5,11 @@ import java.lang.Number;
 rule "COPGenderDecisionRuleTBD"
 	ruleflow-group "copGenderDecisionRuleFlowGroup"
 	dialect "mvel"
-	salience 101
+	salience 50
 	when
-		$selSch : SelectedSchool( $sch : school)
+		$stu : Student( )
+		$selSch : SelectedSchool( )
 	then
-		System.out.println("Executed Rule: " + drools.getRule().getName()  + " Selected School : " + $sch.getSchoolName());
+		System.out.println("Executed Rule: " + drools.getRule().getName()  + " Selected School : " + $selSch.school.getSchoolName());
+		//$selSch.populateTravelDuration($stu.postalCode);
 end

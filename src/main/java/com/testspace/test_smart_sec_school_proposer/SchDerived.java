@@ -14,29 +14,29 @@ public class SchDerived implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Travel Distance from School to Student postal address")
 	private java.lang.Float travelDistance;
 	@org.kie.api.definition.type.Label("CF of Express COP event")
-	private java.lang.Integer copExCF;
+	private float copExCF;
 	@org.kie.api.definition.type.Label("CF of Express COP Rule")
-	private java.lang.Integer copExRuleCF;
+	private float copExRuleCF;
 	@org.kie.api.definition.type.Label("CF of CCA event")
-	private java.lang.Integer ccaCF;
+	private float ccaCF;
 	@org.kie.api.definition.type.Label("CF of CCA Rule")
-	private java.lang.Integer ccaRuleCF;
+	private float ccaRuleCF;
 	@org.kie.api.definition.type.Label("CF of Normal Stream COP")
-	private java.lang.Integer copNormalCF;
+	private float copNormalCF;
 	@org.kie.api.definition.type.Label("CF of Normal Stream Rule COP")
-	private java.lang.Integer copNormalRuleCF;
+	private float copNormalRuleCF;
 	@org.kie.api.definition.type.Label("CF of NT Stream COP")
-	private java.lang.Integer copNTCF;
+	private float copNTCF;
 	@org.kie.api.definition.type.Label("CF of COP NT Stream Rule")
-	private java.lang.Integer copNTRuleCF;
+	private float copNTRuleCF;
 	@org.kie.api.definition.type.Label("CF of Mother Tongue event")
-	private java.lang.Integer MTCF;
+	private float MTCF;
 	@org.kie.api.definition.type.Label("CF of Mother Tongue Rule")
-	private java.lang.Integer MTRuleCF;
+	private float MTRuleCF;
 	@org.kie.api.definition.type.Label("CF of Gender event")
-	private java.lang.Integer genderCF;
+	private float genderCF;
 	@org.kie.api.definition.type.Label("CF of Gender Rule")
-	private java.lang.Integer genderRuleCF;
+	private float genderRuleCF;
 
 	public SchDerived() {
 	}
@@ -57,110 +57,107 @@ public class SchDerived implements java.io.Serializable {
 		this.travelDistance = travelDistance;
 	}
 
-	public java.lang.Integer getCopExCF() {
+	public float getCopExCF() {
 		return this.copExCF;
 	}
 
-	public void setCopExCF(java.lang.Integer copExCF) {
+	public void setCopExCF(float copExCF) {
 		this.copExCF = copExCF;
 	}
 
-	public java.lang.Integer getCopExRuleCF() {
+	public float getCopExRuleCF() {
 		return this.copExRuleCF;
 	}
 
-	public void setCopExRuleCF(java.lang.Integer copExRuleCF) {
+	public void setCopExRuleCF(float copExRuleCF) {
 		this.copExRuleCF = copExRuleCF;
 	}
 
-	public java.lang.Integer getCcaCF() {
+	public float getCcaCF() {
 		return this.ccaCF;
 	}
 
-	public void setCcaCF(java.lang.Integer ccaCF) {
+	public void setCcaCF(float ccaCF) {
 		this.ccaCF = ccaCF;
 	}
 
-	public java.lang.Integer getCcaRuleCF() {
+	public float getCcaRuleCF() {
 		return this.ccaRuleCF;
 	}
 
-	public void setCcaRuleCF(java.lang.Integer ccaRuleCF) {
+	public void setCcaRuleCF(float ccaRuleCF) {
 		this.ccaRuleCF = ccaRuleCF;
 	}
 
-	public java.lang.Integer getCopNormalCF() {
+	public float getCopNormalCF() {
 		return this.copNormalCF;
 	}
 
-	public void setCopNormalCF(java.lang.Integer copNormalCF) {
+	public void setCopNormalCF(float copNormalCF) {
 		this.copNormalCF = copNormalCF;
 	}
 
-	public java.lang.Integer getCopNormalRuleCF() {
+	public float getCopNormalRuleCF() {
 		return this.copNormalRuleCF;
 	}
 
-	public void setCopNormalRuleCF(java.lang.Integer copNormalRuleCF) {
+	public void setCopNormalRuleCF(float copNormalRuleCF) {
 		this.copNormalRuleCF = copNormalRuleCF;
 	}
 
-	public java.lang.Integer getCopNTCF() {
+	public float getCopNTCF() {
 		return this.copNTCF;
 	}
 
-	public void setCopNTCF(java.lang.Integer copNTCF) {
+	public void setCopNTCF(float copNTCF) {
 		this.copNTCF = copNTCF;
 	}
 
-	public java.lang.Integer getCopNTRuleCF() {
+	public float getCopNTRuleCF() {
 		return this.copNTRuleCF;
 	}
 
-	public void setCopNTRuleCF(java.lang.Integer copNTRuleCF) {
+	public void setCopNTRuleCF(float copNTRuleCF) {
 		this.copNTRuleCF = copNTRuleCF;
 	}
 
-	public java.lang.Integer getMTCF() {
+	public float getMTCF() {
 		return this.MTCF;
 	}
 
-	public void setMTCF(java.lang.Integer MTCF) {
+	public void setMTCF(float MTCF) {
 		this.MTCF = MTCF;
 	}
 
-	public java.lang.Integer getMTRuleCF() {
+	public float getMTRuleCF() {
 		return this.MTRuleCF;
 	}
 
-	public void setMTRuleCF(java.lang.Integer MTRuleCF) {
+	public void setMTRuleCF(float MTRuleCF) {
 		this.MTRuleCF = MTRuleCF;
 	}
 
-	public java.lang.Integer getGenderCF() {
+	public float getGenderCF() {
 		return this.genderCF;
 	}
 
-	public void setGenderCF(java.lang.Integer genderCF) {
+	public void setGenderCF(float genderCF) {
 		this.genderCF = genderCF;
 	}
 
-	public java.lang.Integer getGenderRuleCF() {
+	public float getGenderRuleCF() {
 		return this.genderRuleCF;
 	}
 
-	public void setGenderRuleCF(java.lang.Integer genderRuleCF) {
+	public void setGenderRuleCF(float genderRuleCF) {
 		this.genderRuleCF = genderRuleCF;
 	}
 
 	public SchDerived(java.lang.Float travelDuration,
-			java.lang.Float travelDistance, java.lang.Integer copExCF,
-			java.lang.Integer copExRuleCF, java.lang.Integer ccaCF,
-			java.lang.Integer ccaRuleCF, java.lang.Integer copNormalCF,
-			java.lang.Integer copNormalRuleCF, java.lang.Integer copNTCF,
-			java.lang.Integer copNTRuleCF, java.lang.Integer MTCF,
-			java.lang.Integer MTRuleCF, java.lang.Integer genderCF,
-			java.lang.Integer genderRuleCF) {
+			java.lang.Float travelDistance, float copExCF, float copExRuleCF,
+			float ccaCF, float ccaRuleCF, float copNormalCF,
+			float copNormalRuleCF, float copNTCF, float copNTRuleCF,
+			float MTCF, float MTRuleCF, float genderCF, float genderRuleCF) {
 		this.travelDuration = travelDuration;
 		this.travelDistance = travelDistance;
 		this.copExCF = copExCF;
