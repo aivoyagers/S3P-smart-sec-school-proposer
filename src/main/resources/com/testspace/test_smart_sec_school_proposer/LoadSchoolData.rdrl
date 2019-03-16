@@ -12,6 +12,7 @@ rule "LoadSchoolData"
 		$stuRecord.populateSchoolCollection(  );
 		for(School $schoolRec: $stuRecord.getSchoolCollection().getSchoolList()) {
 		System.out.println(" School Loaded : " + $schoolRec.getSchoolName());
+		System.out.println(" School Loaded : " + $schoolRec.getDerivedData());
 		School $schoolObj = new School();
 		$schoolObj.setSchoolName( $schoolRec.getSchoolName() );
 		$schoolObj.setSchoolSelected( false );

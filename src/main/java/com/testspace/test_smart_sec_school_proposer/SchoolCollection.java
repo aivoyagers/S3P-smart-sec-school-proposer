@@ -48,9 +48,7 @@ public class SchoolCollection implements java.io.Serializable {
 	public void populateSchools(){
         //Load School from CSV
         
-      	//final String dir = System.getProperty("user.dir");
-        //System.out.println("current dir = " + dir);
-		    
+      	    
 		Path pathToFile = Paths.get("SchoolDatas.csv");
 	    try(BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)) 
  
@@ -62,8 +60,7 @@ public class SchoolCollection implements java.io.Serializable {
      	 	    j++;
      	 	
       		    School school= createSchool(attributes); 
-      		    //System.out.println("school added------>"+school.getSchoolName());
-        		getSchoolList().add(school) ;
+      			getSchoolList().add(school) ;
       	        line = br.readLine(); 
       	        }
         } 

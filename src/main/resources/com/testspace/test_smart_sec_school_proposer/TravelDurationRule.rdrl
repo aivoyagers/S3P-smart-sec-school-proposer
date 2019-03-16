@@ -2,14 +2,14 @@ package com.testspace.test_smart_sec_school_proposer;
 
 import java.lang.Number;
 
-rule "COPGenderDecisionRuleTBD"
+rule "TravelDurationRule"
 	ruleflow-group "copGenderDecisionRuleFlowGroup"
 	dialect "mvel"
 	salience 50
 	when
-		$stu : Student( )
 		$selSch : SelectedSchool( )
+		$stu : Student( )
 	then
 		System.out.println("Executed Rule: " + drools.getRule().getName()  + " Selected School : " + $selSch.school.getSchoolName());
-		//$selSch.populateTravelDuration($stu.postalCode);
+		$selSch.populateTravelDuration( $stu.postalCode );
 end

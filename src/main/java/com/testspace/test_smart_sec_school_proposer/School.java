@@ -85,14 +85,20 @@ public class School implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Derived data for the school")
 	private com.testspace.test_smart_sec_school_proposer.SchDerived derivedData;
 
-	@org.kie.api.definition.type.Label(value = "COP Express CF")
+	@org.kie.api.definition.type.Label("COP Express CF")
 	private float copExCF;
 
-	@org.kie.api.definition.type.Label(value = "COP Normal CF")
+	@org.kie.api.definition.type.Label("COP Normal CF")
 	private float copNormalCF;
 
-	@org.kie.api.definition.type.Label(value = "COP NT CF")
+	@org.kie.api.definition.type.Label("COP NT CF")
 	private float copNTCF;
+
+	@org.kie.api.definition.type.Label(value = "Travel Distance")
+	private float travelDistance;
+
+	@org.kie.api.definition.type.Label(value = "Travel Duration")
+	private int travelDuration;
 
 	public School() {
 	}
@@ -331,6 +337,22 @@ public class School implements java.io.Serializable {
 		this.copNTCF = copNTCF;
 	}
 
+	public float getTravelDistance() {
+		return this.travelDistance;
+	}
+
+	public void setTravelDistance(float travelDistance) {
+		this.travelDistance = travelDistance;
+	}
+
+	public int getTravelDuration() {
+		return this.travelDuration;
+	}
+
+	public void setTravelDuration(int travelDuration) {
+		this.travelDuration = travelDuration;
+	}
+
 	public School(
 			java.lang.String schoolName,
 			java.lang.String location,
@@ -357,7 +379,8 @@ public class School implements java.io.Serializable {
 			int copOverallMax,
 			java.lang.Boolean schoolSelected,
 			com.testspace.test_smart_sec_school_proposer.SchDerived derivedData,
-			float copExCF, float copNormalCF, float copNTCF) {
+			float copExCF, float copNormalCF, float copNTCF,
+			float travelDistance, int travelDuration) {
 		this.schoolName = schoolName;
 		this.location = location;
 		this.postalCode = postalCode;
@@ -386,6 +409,8 @@ public class School implements java.io.Serializable {
 		this.copExCF = copExCF;
 		this.copNormalCF = copNormalCF;
 		this.copNTCF = copNTCF;
+		this.travelDistance = travelDistance;
+		this.travelDuration = travelDuration;
 	}
 
 }
