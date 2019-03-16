@@ -126,6 +126,13 @@ public class SchoolCollection implements java.io.Serializable {
 			 
 	}
 	
+	public void sortSchoolCollection()
+	{
+	    System.out.println("inside sortSchoolCollection");
+	    getSchoolList().sort(Comparator.comparing(School::getCopExpMean).reversed());
+	      System.out.println("after sortSchoolCollection");
+	}
+	
 	
 	
 

@@ -6,10 +6,10 @@ rule "validation"
 	dialect "mvel"
 	ruleflow-group "StudentInfoValidationRuleFlowGroup"
 	when
-		stu : Student( expectedScore >= 300 || expectedScore < 100 )
+		stu : Student( expectedScore >= 285 || expectedScore < 200 )
 	then
 		ValidationErrorDO fact0 = new ValidationErrorDO();
-		fact0.setError( "Expected T Score range should be  150 t0 300" );
+		fact0.setError( "Expected T Score range should be  200 to 285" );
 		insert( fact0 );
 		System.out.println("Executed Rule: " + drools.getRule().getName() );
 		stu.setError( fact0 );
